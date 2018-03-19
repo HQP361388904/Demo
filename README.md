@@ -1,2 +1,2 @@
 # wtoip
-Sign for My Days During WTOIP
+Sign for My Days
