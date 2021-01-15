@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML/CSS版面积图</title>
+  <style>
+    .areagraph {
+      position: relative;
+      width: 915px;
+      height: 415px;
+      /* background: url(https://static001.geekbang.org/resource/image/cc/c9/cc4d0f6d9260d508758c8043a14ea1c9.jpg) -845px -310px no-repeat transparent; */
+    }
+
+    .areagraph div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .areagraph div:nth-child(1) {
+      z-index: 1;
+      background: #e9b5bf;
+      clip-path: polygon(150px 0,
+          309px 79px,
+          462px 28px,
+          616px 130px,
+          770px 55px,
+          915px 270px,
+          915px 415px,
+          0 415px,
+          0 157px,
+          154px 2px);
+    }
+
+    .areagraph div:nth-child(2) {
+      z-index: 2;
+      background: #65adbb;
+      clip-path: polygon(153px 156px,
+          307px 233px,
+          461px 131px,
+          615px 182px,
+          771px 311px,
+          915px 335px,
+          915px 415px,
+          0 415px,
+          0 258px,
+          148px 160px);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- clip-path = 面积图 -->
+    <div class="areagraph">
+      <div v-for="(item, index) in 2" :key="index">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      // data() {
+      //   return {
+      //     dataset: {
+      //       current: [15, 11, 17, 25, 37],
+      //       total: [25, 26, 40, 45, 68],
+      //     },
+      //   }
+      // },
+    });
+  </script>
+</body>
+
+</html>
