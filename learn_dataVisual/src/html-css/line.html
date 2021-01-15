@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML/CSS版折线图</title>
+  <style>
+    .linegraph {
+      width: 780px;
+      height: 250px;
+      /* background: url(https://static001.geekbang.org/resource/image/cc/c9/cc4d0f6d9260d508758c8043a14ea1c9.jpg) -25px -394px no-repeat transparent; */
+    }
+
+    .linegraph div {
+      height: 2px;
+      background: #3c7;
+    }
+
+    .linegraph div:nth-child(1) {
+      width: 210px;
+      transform: translateY(160px) translateX(-14px) rotate(-45deg);
+    }
+
+    .linegraph div:nth-child(2) {
+      width: 152px;
+      transform: translateY(84px) translateX(164px);
+    }
+
+    .linegraph div:nth-child(3) {
+      width: 172px;
+      transform: translateY(39px) translateX(304px) rotate(-30deg);
+    }
+
+    .linegraph div:nth-child(4) {
+      width: 214px;
+      transform: translateY(69px) translateX(432px) rotate(45deg);
+    }
+
+    .linegraph div:nth-child(5) {
+      width: 152px;
+      transform: translateY(142px) translateX(613px);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 高度很小的div + transform改变角度和位置 = 折线图 -->
+    <div class="linegraph">
+      <div v-for="(item, index) in 5" :key="index"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      // data() {
+      //   return {
+      //     dataset: {
+      //       current: [15, 11, 17, 25, 37],
+      //       total: [25, 26, 40, 45, 68],
+      //     },
+      //   }
+      // },
+    });
+  </script>
+</body>
+
+</html>
